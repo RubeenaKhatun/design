@@ -43,9 +43,9 @@ function Header() {
 export default Header;
 
 const menus = [
-  "Home",
-  "Contact",
-  "About",
+  "home",
+  "contact",
+  "about",
   "login",
   "signup",
 ];

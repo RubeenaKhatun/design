@@ -3,6 +3,8 @@ import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 import SignupForm from "../../components/SignupForm";
 
 const Index = () => {
+  const [isUserHovered, setIsUserHovered] = useState(false);
+  const [isDesignerHovered, setIsDesignerHovered] = useState(false);
   const [s, sets] = useState("type");
   const handleSalesContact = () => {
     // Handle action when contacting sales
@@ -69,26 +71,69 @@ const Index = () => {
       )} */}
       {s == "type" && (
         <>
-          <div className="relative z-10 flex min-h-screen flex-col items-center justify-center p-20 md:flex-row lg:flex-row">
+          <div className="relative z-10 flex min-h-screen flex-col items-center justify-evenly p-20 lg:flex-row">
             <div
-              className="m-10 w-full max-w-md rounded-lg bg-white p-6 opacity-80 shadow-xl duration-500 hover:-translate-y-4 hover:scale-105"
+              className="relative"
               onClick={() => {
                 sets("user");
               }}
+              onMouseEnter={() => setIsUserHovered(true)}
+              onMouseLeave={() => setIsUserHovered(false)}
             >
-              <h2 className="my-6 text-center text-lg font-semibold">
-                signup for user
-              </h2>
+              <div className="w-full max-w-full rounded-2xl border border-gray-200/10 bg-white/10 p-8 shadow-2xl backdrop-blur-lg duration-1000 hover:scale-150 hover:border-white/100 sm:w-[400px]">
+                <h1 className="text-center text-xl font-bold text-white">
+                  SignUp for User
+                </h1>
+                <h1 className=" py-5 text-center text-sm text-white">
+                  get ur customized products home delivered
+                </h1>
+                {isUserHovered && (
+                  <div
+                    className="absolute inset-0 rounded-2xl"
+                    style={{
+                      backgroundImage: "url('/1.png')",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    {/* <h1 className="p-5 text-lg font-semibold text-white">
+                      get ur customized products home delivered
+                    </h1> */}
+                  </div>
+                )}
+              </div>
             </div>
             <div
-              className="m-10 w-full max-w-md rounded-lg bg-white p-6 opacity-80 shadow-xl duration-500 hover:-translate-y-4 hover:scale-105"
+              className="relative"
               onClick={() => {
                 sets("designer");
               }}
+              onMouseEnter={() => setIsDesignerHovered(true)}
+              onMouseLeave={() => setIsDesignerHovered(false)}
             >
-              <h2 className="my-6 text-center text-lg font-semibold">
-                signup for designer
-              </h2>
+              <div className="w-full max-w-full rounded-2xl border border-gray-200/10 bg-white/10 p-8 shadow-2xl backdrop-blur-lg duration-1000 hover:scale-150 hover:border-white/100 sm:w-[400px]">
+                <h1 className="text-center text-xl font-bold text-white">
+                  SignUp for Designer
+                </h1>
+                <h1 className="py-5 text-center text-sm text-white">
+                  Work with us as a designer
+                </h1>
+                {isDesignerHovered && (
+                  <div
+                    className="absolute inset-0 rounded-2xl"
+                    style={{
+                      backgroundImage: "url('/3.png')",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    {" "}
+                    {/* <h1 className="p-5 text-lg font-semibold text-white">
+                      Work with us as a designer
+                    </h1> */}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </>
