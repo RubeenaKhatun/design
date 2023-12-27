@@ -10,7 +10,7 @@ export default function Component() {
         className="absolute inset-0 h-full w-full object-cover"
         src="/background.png"
       />
-      <div className="relative mx-auto max-w-4xl rounded-lg border border-white/10 bg-white/10 p-8 backdrop-blur-sm">
+      <div className="relative mx-auto max-w-4xl rounded-lg border border-white/10 bg-white/10 p-8 backdrop-blur-sm hover:border-gray-500/100 hover:shadow-white">
         <h1 className="mb-6 text-center font-serif text-6xl font-bold">
           Contact Us
         </h1>
